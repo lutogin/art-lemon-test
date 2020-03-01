@@ -2,7 +2,7 @@ import { GraphQLObjectType, GraphQLString } from 'graphql';
 
 const userSchema = new GraphQLObjectType({
   name: 'user',
-  fields: function () {
+  fields: () => {
     return {
       first_name: {
         type: GraphQLString,

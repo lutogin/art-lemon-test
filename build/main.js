@@ -410,7 +410,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const userSchema = new graphql__WEBPACK_IMPORTED_MODULE_0__["GraphQLObjectType"]({
   name: 'user',
-  fields: function () {
+  fields: () => {
     return {
       first_name: {
         type: graphql__WEBPACK_IMPORTED_MODULE_0__["GraphQLString"]
