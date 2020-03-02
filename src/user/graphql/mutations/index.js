@@ -37,7 +37,6 @@ const createUser = {
 /**
  * Mutation reading User.
  * @type {{args: {id: {type: GraphQLNonNull<GraphQLNullableType>}} }}
- * TODO: Есть сомнения в необходимости этого метода в мутациях, т.к. пользователя можем получить в query.
  */
 const readUser = {
   type: userSchema,
