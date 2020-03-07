@@ -1,22 +1,15 @@
 import express from 'express';
-import graphqlHTTP from 'express-graphql';
-import cors from 'cors';
-
+import { ApolloServer } from 'apollo-server-express';
 import { HOST, PORT } from './config';
+import userSchema from './v1/user/schema';
 import connection from './db';
-import userSchema from './user/graphql';
 
 const app = express();
-connection();
+connection(); // Connect to DB.
 
-app.use('*', cors());
-
-app.use('/', cors(), graphqlHTTP({
-  schema: userSchema,
-  rootValue: global,
-  graphiql: true
-}));
+const apolloServer = new ApolloServer({ schema: userSchema });
+apolloServer.applyMiddleware({ app });
 
 app.listen(PORT, () => {
-  console.log(`🚀  Server ready at ${HOST}:${PORT}`);
+  console.log(`🚀  Server ready at ${HOST}:${PORT}${apolloServer.graphqlPath}`);
 });
