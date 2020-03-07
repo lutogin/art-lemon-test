@@ -14,7 +14,7 @@ const resolvers = {
       return User.create(data);
     },
     updateUser: async (root, data) => {
-      return User.updateOne({ _id: data.id }, { update_at: Date.now(), ...data} );
+      return User.findOneAndUpdate({ _id: data.id }, { update_at: Date.now(), ...data} );;
     },
     deleteUser: async (root, { id }) => {
       return User.findByIdAndRemove(id);
