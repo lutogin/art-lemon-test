@@ -20,7 +20,7 @@ services:
     environment:
       - MONGO_DATA_DIR=/data/db
       - MONGO_LOG_DIR=/dev/null
-      - MONGO_INITDB_DATABSE=lemon
+      - MONGO_INITDB_DATABASE=lemon
 #      - MONGO_INITDB_ROOT_USERNAME=lemon_admin
 #      - MONGO_INITDB_ROOT_PASSWORD=Passw0rd1
     volumes:
