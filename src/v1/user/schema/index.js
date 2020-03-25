@@ -17,11 +17,6 @@ const typeDefs =`
       updateUser(id: ID!, first_name: String!, last_name: String!, email: String!): User,
       deleteUser(id: ID!): User,
     }
-    type Subscription {
-      userAdded: User,
-      userEdited: User,
-      userDeleted: User
-    }
     `;
 
 const userSchema = makeExecutableSchema({ typeDefs, resolvers });
